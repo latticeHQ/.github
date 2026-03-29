@@ -2,58 +2,55 @@
 
 # Lattice
 
-### The open-source coordination layer for institutional AI.
+### Crash-proof governed runtime for AI agents.
 
-**Individual AI made everyone productive. Institutional AI makes organizations work.**
+**Your agents crash silently. You can't prove what happened. Lattice fixes both.**
 
 ---
 
 </div>
 
-AI agents are everywhere. But deploying them across an organization means duct-taping together identity, authorization, budgets, audit trails, networking, and observability from 7+ separate tools.
+AI agents crash and nobody knows. When something goes wrong, there's no audit trail. The status quo is systemd plus prayer. Every tool in this space helps you *write* agents. None of them help you *run* agents safely.
 
-**Lattice Runtime** is a single open-source binary that provides all of it. One layer. One database. Replace fragmented tooling with `docker compose up`.
+**Lattice Runtime** is a single Go binary that gives your agents crash-proof execution (embedded Temporal), cryptographic audit (SHA-256 hash-chained), budget enforcement, and zero-trust mesh networking. Install it, deploy your agents on top. No code changes required.
+
+```bash
+brew install latticehq/lattice/lattice
+lattice server
+```
 
 ## The Ecosystem
 
 | Component | What it does | License |
 |-----------|-------------|---------|
-| [**Runtime**](https://github.com/latticeHQ/latticeRuntime) | Coordination layer — identity, authorization, audit, budget, networking | Apache 2.0 |
-| [**SDK**](https://github.com/latticeHQ/latticeSDK) | Go SDK for building Department Stacks | Apache 2.0 |
-| [**Workbench**](https://github.com/latticeHQ/latticeWorkbench) | Reference Engineering Stack — multi-model agent workspace | MIT |
-| [**Inference**](https://github.com/latticeHQ/latticeInference) | Local AI serving — MLX on Apple Silicon, zero-config clustering | Apache 2.0 |
-| [**Operator**](https://github.com/latticeHQ/latticeOperator) | Self-hosted deployment management for Lattice infrastructure | Apache 2.0 |
-| [**Registry**](https://github.com/latticeHQ/latticeRegistry) | Community ecosystem — Terraform modules, templates, department stacks | Apache 2.0 |
-| [**Terraform Provider**](https://github.com/latticeHQ/terraform-provider-lattice) | Infrastructure as code for Lattice deployments | MPL 2.0 |
-| [**Toolbox**](https://github.com/latticeHQ/LatticeToolbox) | macOS app manager for Lattice products | MIT |
-| [**Homebrew**](https://github.com/latticeHQ/latticeHomebrew) | One-line install on macOS and Linux | MIT |
-| [**Enterprise**](https://github.com/latticeHQ/latticeEnterprise) | Enterprise administration and governance | Coming soon |
+| [**Runtime**](https://github.com/latticeHQ/latticeRuntime) | Crash-proof runtime — identity, auth, audit, budget, mesh | Apache 2.0 |
+| [**Workbench**](https://github.com/latticeHQ/latticeWorkbench) | 316K-line multi-model agent workspace | MIT |
+| [**SDK**](https://github.com/latticeHQ/latticeSDK) | Go SDK for building on Lattice | Apache 2.0 |
+| [**Inference**](https://github.com/latticeHQ/latticeInference) | Local AI serving — MLX on Apple Silicon | Apache 2.0 |
+| [**Operator**](https://github.com/latticeHQ/latticeOperator) | Self-hosted deployment via SSH | Apache 2.0 |
+| [**Registry**](https://github.com/latticeHQ/latticeRegistry) | Community modules, templates, stacks | Apache 2.0 |
+| [**Terraform Provider**](https://github.com/latticeHQ/terraform-provider-lattice) | Infrastructure as code | MPL 2.0 |
+| [**Toolbox**](https://github.com/latticeHQ/LatticeToolbox) | macOS app manager | MIT |
+| [**Homebrew**](https://github.com/latticeHQ/latticeHomebrew) | One-line install | MIT |
 
 ## Why Lattice?
 
-- **Open source** — Enforcement logic is Apache 2.0. If software decides "allow" or "deny," the decision must be auditable.
-- **Self-hosted** — Your data never leaves your infrastructure. Cloud, on-prem, air-gapped.
-- **Vendor-neutral** — Works with any AI model, any cloud, any agent framework.
-- **One layer** — Identity, auth, budget, audit, networking, observability — unified, not duct-taped.
-
-## Get Started
-
-```bash
-brew install latticeHQ/lattice/lattice
-lattice server --postgres-url postgres://... --http-address 0.0.0.0:3000
-```
+- **Crash-proof** — Embedded Temporal. Agents survive failures. State is never lost.
+- **Auditable** — SHA-256 hash-chained audit trail. Tamper with one record, every subsequent hash breaks. SOC2/HIPAA/FedRAMP as a side effect.
+- **Governed** — RBAC + ABAC via Rego. Budget enforcement. Tool whitelisting. PII blocking. All at runtime.
+- **Open source** — Apache 2.0. If software decides "allow" or "deny," the decision logic must be auditable.
+- **Self-hosted** — Your data stays on your infrastructure. Cloud, on-prem, edge, air-gapped.
 
 ## Links
 
 - **Website**: [latticeruntime.com](https://latticeruntime.com)
 - **Vision**: [VISION.md](https://github.com/latticeHQ/latticeRuntime/blob/develop/VISION.md)
 - **Security**: security@latticeruntime.com
-- **Code of Conduct**: [CODE_OF_CONDUCT.md](https://github.com/latticeHQ/latticeRuntime/blob/develop/CODE_OF_CONDUCT.md)
 
 ---
 
 <div align="center">
 
-**Your agents. Your coordination. Your rules. Your infrastructure.**
+**I killed the agent. It came back. I can prove it.**
 
 </div>
